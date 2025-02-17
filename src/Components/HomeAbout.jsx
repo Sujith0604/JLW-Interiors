@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
 import { motion } from "motion/react";
+import LazyLoad from "react-lazy-load";
 
 const HomeAbout = () => {
   return (
     <div id="about" className=" flex flex-col gap-10 px-2 py-5 bg-amber-100 ">
-      <div className=" flex flex-col gap-5  h-[400px] items-center justify-center ">
+      <div className=" flex flex-col gap-5  lg:h-[400px] items-center justify-center ">
         <h1 className=" text-5xl font-bold text-center">
           WELCOME TO JLW INTERIORS
         </h1>
@@ -35,17 +35,25 @@ const HomeAbout = () => {
           </p>
         </div>
         <div className=" lg:w-[60%] px-2 flex items-center justify-center">
-          <img src="/images/about.webp" alt="about1" className=" rounded-3xl" />
+          <LazyLoad offset={300}>
+            <img
+              src="/images/about.webp"
+              alt="about1"
+              className=" rounded-3xl"
+            />
+          </LazyLoad>
         </div>
       </section>
 
       <section className=" w-[100%] flex lg:flex-row flex-col gap-11 lg:gap-0">
         <div className=" lg:w-[50%]  flex items-center justify-center">
-          <img
-            src="/images/About2.jpg"
-            alt="about1"
-            className=" lg:h-[900px] rounded-3xl"
-          />
+          <LazyLoad offset={300}>
+            <img
+              src="/images/About2.jpg"
+              alt="about1"
+              className=" lg:h-[900px] rounded-3xl"
+            />
+          </LazyLoad>
         </div>
         <div className=" lg:w-[50%] flex flex-col items-center lg:items-start  gap-11 px-2">
           <h1 className="  text-5xl  font-bold">

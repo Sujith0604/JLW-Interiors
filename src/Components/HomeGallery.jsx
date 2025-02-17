@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import LazyLoad from "react-lazy-load";
 const HomeGallery = () => {
   const data = [
     {
@@ -55,13 +56,15 @@ const HomeGallery = () => {
     >
       {data.map(({ imageLink }, index) => (
         <div key={index}>
-          <motion.img
-            whileHover={{ scale: 0.96 }}
-            whileTap={{ scale: 0.95 }}
-            className="h-95 w-full max-w-full rounded-lg object-cover object-center"
-            src={imageLink}
-            alt="gallery-photo"
-          />
+          <LazyLoad offset={300}>
+            <motion.img
+              whileHover={{ scale: 0.96 }}
+              whileTap={{ scale: 0.95 }}
+              className="h-95 w-full max-w-full rounded-lg object-cover object-center"
+              src={imageLink}
+              alt="gallery-photo"
+            />
+          </LazyLoad>
         </div>
       ))}
     </div>

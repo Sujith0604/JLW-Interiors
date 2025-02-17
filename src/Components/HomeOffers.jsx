@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "motion/react";
+import LazyLoad from "react-lazy-load";
 const HomeOffers = () => {
   const offerDeatails = [
     {
@@ -44,12 +45,15 @@ const HomeOffers = () => {
             className=" flex flex-col gap-2 border w-[450px] h-[500px] items-center justify-center rounded-md"
           >
             <div className="relative">
-              <motion.img
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                src={offer.image}
-                className="h-[400px] w-[400px] bg-center bg-cover"
-              />
+              <LazyLoad height={400} width={400} offset={300}>
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  src={offer.image}
+                  className="h-[400px] w-[400px] bg-center bg-cover"
+                />
+              </LazyLoad>
+
               <div className=" absolute bottom-0 left-25 bg-white w-[200px] h-[100px] flex items-center flex-col justify-center">
                 <h1>{offer.title}</h1>
                 <p className=" text-xl font-bold">{offer.description}</p>

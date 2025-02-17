@@ -1,6 +1,7 @@
 import Marquee from "react-fast-marquee";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { motion } from "motion/react";
+import LazyLoad from "react-lazy-load";
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
       className=" flex flex-col gap-11 rounded-3xl  justify-between "
     >
       <section className=" flex items-center justify-center lg:justify-between font-bold tracking-widest px-10  ">
-        <h1 className="uppercase lg:text-[100px] md:text-8xl lg:text-5xl ">
+        <h1 className="uppercase  lg:text-[100px] md:text-8xl text-5xl ">
           Satisifaction
         </h1>
         {/* <div className=" flex items-center justify-center h-[200px] w-[200px] bg-yellow-500 rounded-3xl">
@@ -56,34 +57,45 @@ const Hero = () => {
       </section>
 
       <section className=" justify-around flex flex-wrap gap-2 items-center px-4 ">
-        <motion.img
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          src="/images/1.jpg"
-          className=" rounded-3xl lg:h-[370px] bg-cover hover:cursor-pointer"
-          loading="lazy"
-        />
-        <motion.img
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          src="/images/2.jpg"
-          className=" rounded-3xl lg:h-[370px] bg-cover hover:cursor-pointer"
-          loading="lazy"
-        />
-        <motion.img
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          src="/images/3.jpg"
-          className=" rounded-3xl lg:h-[370px] bg-cover hover:cursor-pointer"
-          loading="lazy"
-        />
-        <motion.img
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          src="/images/4.jpg"
-          className=" rounded-3xl lg:h-[370px] bg-cover hover:cursor-pointer"
-          loading="lazy"
-        />
+        <LazyLoad>
+          <motion.img
+            whileHover={{ scale: 0.96 }}
+            whileTap={{ scale: 0.95 }}
+            src="/images/1.jpg"
+            className=" rounded-3xl lg:h-[370px] bg-cover hover:cursor-pointer"
+            loading="lazy"
+          />
+        </LazyLoad>
+
+        <LazyLoad>
+          <motion.img
+            whileHover={{ scale: 0.96 }}
+            whileTap={{ scale: 0.95 }}
+            src="/images/2.jpg"
+            className=" rounded-3xl lg:h-[370px] lg:w-[400px] bg-cover hover:cursor-pointer"
+            loading="lazy"
+          />
+        </LazyLoad>
+
+        <LazyLoad>
+          <motion.img
+            whileHover={{ scale: 0.96 }}
+            whileTap={{ scale: 0.95 }}
+            src="/images/3.jpg"
+            className=" rounded-3xl lg:h-[370px] bg-cover hover:cursor-pointer"
+            loading="lazy"
+          />
+        </LazyLoad>
+
+        <LazyLoad>
+          <motion.img
+            whileHover={{ scale: 0.96 }}
+            whileTap={{ scale: 0.95 }}
+            src="/images/4.jpg"
+            className=" rounded-3xl lg:h-[370px] bg-cover hover:cursor-pointer"
+            loading="lazy"
+          />
+        </LazyLoad>
       </section>
 
       <section className="bg-yellow-500 h-[100px] flex items-center">

@@ -63,6 +63,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import LazyLoad from "react-lazy-load";
 
 const OurProjects = () => {
   const [showCard, setShowCard] = useState("all");
@@ -238,6 +239,7 @@ const PortfolioCard = ({
       >
         <div className="relative mb-12">
           <div className="overflow-hidden rounded-[10px]">
+            {" "}
             <motion.img
               whileHover={{ scale: 0.96 }}
               whileTap={{ scale: 0.95 }}
